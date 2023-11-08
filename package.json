@@ -13,6 +13,8 @@
   "dependencies": {
     "@fastify/cors": "^8.4.1",
     "@fastify/error": "^3.4.1",
+    "@pcd/pcd-types": "^0.8.0",
+    "@pcd/semaphore-signature-pcd": "^0.8.0",
     "fastify": "^4.24.3",
     "pino": "^8.16.1",
     "viem": "^1.18.8"
