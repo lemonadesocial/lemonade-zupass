@@ -8,8 +8,11 @@ export const ChainInvalidError = createError('ERR_CHAIN_INVALID', 'The chain is 
 
 const clientsByChainId: Record<number, PublicClient> = {};
 
-async function createClient(rpcUrl: string) {
-  const client = createPublicClient({ transport: http(rpcUrl, { fetchOptions: { keepalive: true } }) });
+async function createClient(rpcUrl: string, index: number) {
+  const client = createPublicClient({
+    key: index.toString(),
+    transport: http(rpcUrl, { fetchOptions: { keepalive: true } }),
+  });
 
   clientsByChainId[await client.getChainId()] = client;
 }

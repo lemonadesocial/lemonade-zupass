@@ -16,6 +16,7 @@
     "@pcd/pcd-types": "^0.8.0",
     "@pcd/semaphore-signature-pcd": "^0.8.0",
     "fastify": "^4.24.3",
+    "lru-cache": "^10.0.1",
     "pino": "^8.16.1",
     "viem": "^1.18.8"
   },
