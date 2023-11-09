@@ -7,6 +7,8 @@ async function main() {
 
   process.on('SIGINT', () => app.close());
   process.on('SIGTERM', () => app.close());
+
+  console.info('end');
 }
 
 void main();
