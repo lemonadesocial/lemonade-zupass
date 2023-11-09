@@ -1,7 +1,6 @@
 import { ArgumentTypeName, PCD, SerializedPCD } from '@pcd/pcd-types';
 import { EdDSATicketPCDPackage, TicketCategory } from '@pcd/eddsa-ticket-pcd';
 import { EmailPCDPackage } from '@pcd/email-pcd';
-import { getEdDSAPublicKey } from '@pcd/eddsa-pcd';
 import { PCDActionType, PCDPermissionType } from '@pcd/pcd-collection';
 import { recoverMessageAddress } from 'viem';
 import { RSAImagePCDPackage } from '@pcd/rsa-image-pcd';
@@ -10,8 +9,9 @@ import { SemaphoreSignaturePCD, SemaphoreSignaturePCDClaim, SemaphoreSignaturePC
 import { v5 as uuidv5 } from 'uuid';
 import { verifyFeedCredential } from '@pcd/passport-interface';
 import * as assert from 'node:assert';
-import createError from '@fastify/error';
 import type { FastifyPluginCallback, RouteHandlerMethod } from 'fastify';
+
+import { PcdInvalidError } from './pcd';
 
 import { formatAddress } from '../utils';
 import { getBalanceOf, getName } from '../services/erc721';
@@ -20,12 +20,8 @@ import { getCollection } from '../services/simplehash';
 
 import { eddsaPrivateKey, providerName, rsaPrivateKey, uuidNamespace, zupassPublicKey } from '../../config';
 
-EdDSATicketPCDPackage.init?.({});
-
 const ticketName = 'Holder';
 const productId = uuidv5(ticketName, uuidNamespace);
-
-export const PcdInvalidError = createError('ERR_PCD_INVALID', 'The PCD is invalid.', 401);
 
 function generateMessage(account: string, pcd: PCD<SemaphoreSignaturePCDClaim, unknown>) {
   return `Account: ${account}\nIdentity: ${pcd.claim.identityCommitment}`;
@@ -193,10 +189,6 @@ const feedRequestHandler: RouteHandlerMethod = async (request, reply) => {
   });
 }
 
-const edDSAPublicKeyHandler: RouteHandlerMethod = async (_, reply) => {
-  reply.send(await getEdDSAPublicKey(eddsaPrivateKey));
-};
-
 export const zupassNftPlugin: FastifyPluginCallback = (fastify, _, done) => {
   fastify.get('/nft/message', {
     schema: {
@@ -216,8 +208,6 @@ export const zupassNftPlugin: FastifyPluginCallback = (fastify, _, done) => {
   fastify.get('/nft/:chainId/:contract/:payload/:feedId', listFeedsHandler);
 
   fastify.post('/nft/:chainId/:contract/:payload', feedRequestHandler);
-
-  fastify.get('/issue/eddsa-public-key', edDSAPublicKeyHandler);
 
   done();
 };

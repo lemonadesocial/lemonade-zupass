@@ -4,6 +4,7 @@ import fastifyCors from '@fastify/cors';
 import { logger } from './helpers/pino';
 
 import { livezPlugin } from './plugins/livez';
+import { pcdPlugin } from './plugins/pcd';
 import { zupassNftPlugin } from './plugins/zupass-nft';
 
 import * as chain from './services/client';
@@ -30,6 +31,7 @@ export async function createApp() {
   });
 
   await app.register(livezPlugin);
+  await app.register(pcdPlugin);
   await app.register(zupassNftPlugin);
 
   return app;
