@@ -5,10 +5,18 @@ async function main() {
 
   await app.listen({ host: '0.0.0.0', port: 4000 });
 
-  process.on('SIGINT', () => app.close());
-  process.on('SIGTERM', () => app.close());
+  async function close() {
+    await app.close();
 
-  console.info('end');
+    /**
+     * Please note that the forced exit below is required due to a handle leak in the proof verification library.
+     * See https://github.com/semaphore-protocol/semaphore/issues/318
+     */
+    process.exit(0);
+  }
+
+  process.on('SIGINT', close);
+  process.on('SIGTERM', close);
 }
 
 void main();
