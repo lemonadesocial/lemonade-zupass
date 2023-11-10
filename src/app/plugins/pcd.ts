@@ -1,4 +1,4 @@
-import { EdDSATicketPCDPackage } from '@pcd/eddsa-ticket-pcd';
+import { EdDSATicketPCDPackage } from '../../lib/eddsa-ticket-pcd/src';
 import { getEdDSAPublicKey } from '@pcd/eddsa-pcd';
 import createError from '@fastify/error';
 import type { FastifyPluginCallback, RouteHandlerMethod } from 'fastify';
