@@ -16,7 +16,7 @@ import { PcdInvalidError } from './pcd';
 import { formatAddress } from '../utils';
 import { getBalanceOf, getName } from '../services/erc721';
 import { getClientByChainId } from '../services/client';
-import { getCollection } from '../services/simplehash';
+import { getCollection, getCollections } from '../services/simplehash';
 
 import { eddsaPrivateKey, providerName, rsaPrivateKey, uuidNamespace, zupassPublicKey } from '../../config';
 
@@ -26,6 +26,12 @@ const productId = uuidv5(ticketName, uuidNamespace);
 function generateMessage(account: string, pcd: PCD<SemaphoreSignaturePCDClaim, unknown>) {
   return `Account: ${account}\nIdentity: ${pcd.claim.identityCommitment}`;
 }
+
+const collectionsHandler: RouteHandlerMethod = async (_, reply) => {
+  const collections = await getCollections();
+
+  reply.send({ collections });
+};
 
 const messageHandler: RouteHandlerMethod = async (request, reply) => {
   const query = request.query as { account: string; pcd: string };
@@ -190,6 +196,8 @@ const feedRequestHandler: RouteHandlerMethod = async (request, reply) => {
 }
 
 export const zupassNftPlugin: FastifyPluginCallback = (fastify, _, done) => {
+  fastify.get('/nft/collections', collectionsHandler);
+
   fastify.get('/nft/message', {
     schema: {
       querystring: {

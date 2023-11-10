@@ -49,3 +49,13 @@ export async function getCollection(chainId: number | string, address: string) {
 
   return body?.collections[0];
 }
+
+export async function getCollections() {
+  if (!simplehashApiKey) return;
+
+  const body = await request<{
+    collections: { collection_details: Collection }[];
+  }>('/api/v0/nfts/collections/top_v2?chains=ethereum', 60 * 60 * 1000);
+
+  return body?.collections.map((x) => x.collection_details);
+}
