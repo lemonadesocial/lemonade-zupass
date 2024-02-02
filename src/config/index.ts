@@ -1,7 +1,12 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 /**
  * Please note that the default values provided below are intended solely for testing purposes and should not be used in production or treated as real secrets.
  */
 
+export const port = process.env.PORT? parseInt(process.env.PORT) : 4000;
 export const eddsaPrivateKey = process.env.EDDSA_PRIVATE_KEY || '30dfb303b364648f8671199c49a922636961033f45c8374d78083b9ca323a5b5';
 export const lemonadeApiUrl = process.env.LEMONADE_API_URL;
 export const providerName = process.env.PROVIDER_NAME || 'lemonade-zupass';

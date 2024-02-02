@@ -1,9 +1,11 @@
+import { port } from '../config';
+
 import { createApp } from '../app';
 
 async function main() {
   const app = await createApp();
 
-  await app.listen({ host: '0.0.0.0', port: 4000 });
+  await app.listen({ host: '0.0.0.0', port });
 
   async function close() {
     await app.close();

@@ -22,6 +22,7 @@
     "@pcd/rsa-image-pcd": "^0.2.0",
     "@pcd/rsa-pcd": "^0.3.0",
     "@pcd/semaphore-signature-pcd": "^0.8.0",
+    "dotenv": "^16.4.1",
     "fastify": "^4.24.3",
     "lru-cache": "^10.0.1",
     "pino": "^8.16.1",
