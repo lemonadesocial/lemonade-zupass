@@ -689,7 +689,18 @@
     styled-components "^5.3.9"
     uuid "^9.0.0"
 
-"@pcd/eddsa-ticket-pcd@0.3.0", "@pcd/eddsa-ticket-pcd@^0.3.0":
+"@pcd/eddsa-pcd@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@pcd/eddsa-pcd/-/eddsa-pcd-0.5.0.tgz#aa7ad023b194aae3148f6d86b8c5e073a817e8a6"
+  integrity sha512-4SRkFJphXQkNeA27WLyMC/XFsWErRkrmNgZC19dt0q4xv1FiIYpUwbC4y98VF07W/bvoUZHLWE2anIMaoLgWSg==
+  dependencies:
+    "@pcd/pcd-types" "0.10.0"
+    "@pcd/util" "0.4.0"
+    chai "^4.3.7"
+    circomlibjs "^0.1.7"
+    uuid "^9.0.0"
+
+"@pcd/eddsa-ticket-pcd@0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@pcd/eddsa-ticket-pcd/-/eddsa-ticket-pcd-0.3.0.tgz#c8ac107aab146bcb8434acc2f195e10979a81feb"
   integrity sha512-YjObtH/FMK5YGen5v39IhP2INo6dZ9/9xSx1YmjZ6pFB7OG+MKY73nUcerPFjcdUmWK+4PmFjJToFubqD1Y3Bg==
@@ -703,6 +714,19 @@
     lodash "^4.17.21"
     react "^18.2.0"
     styled-components "^5.3.9"
+    uuid "^9.0.0"
+
+"@pcd/eddsa-ticket-pcd@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@pcd/eddsa-ticket-pcd/-/eddsa-ticket-pcd-0.5.0.tgz#bc27705f3df02863ffcb17a594ed9b65ec50885e"
+  integrity sha512-GWESQRcFuL5FqZt6jpD3VZ5bigz3ryIMHOu9ISuaVg56nMCP0Hwa+cj0B3w1AYlL4W3MfrxkSpNd5c8h1pgljA==
+  dependencies:
+    "@pcd/eddsa-pcd" "0.5.0"
+    "@pcd/pcd-types" "0.10.0"
+    "@pcd/util" "0.4.0"
+    chai "^4.3.7"
+    json-bigint "^1.0.0"
+    lodash "^4.17.21"
     uuid "^9.0.0"
 
 "@pcd/email-pcd@^0.3.0":
@@ -779,6 +803,11 @@
     chai "^4.3.7"
     lodash "^4.17.21"
     uuid "^9.0.0"
+
+"@pcd/pcd-types@0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@pcd/pcd-types/-/pcd-types-0.10.0.tgz#2076b37fe3d95fd2545e321a37c7b3a24bfd70a5"
+  integrity sha512-QoBlHYVhNA8nbjpl8hmwHLkV78XolFCC7hdpt0U+STY7dfQO+aAegVYbx18yHo4G76nFj9xRUSfjVFV8ZzxIlQ==
 
 "@pcd/pcd-types@0.8.0", "@pcd/pcd-types@^0.8.0":
   version "0.8.0"
@@ -883,6 +912,15 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@pcd/util/-/util-0.2.0.tgz#26cd123171cdd74f113114f1d5960043a79f7255"
   integrity sha512-tLM2DDmm2TAwdQNf38yMltPAptC0TswOOcAoegIqtDH/UtJphujePEXXmt+IFNKcR3D/TdmlmzW+qSHc20rrkg==
+  dependencies:
+    chai "^4.3.7"
+    js-sha256 "^0.10.1"
+    uuid "^9.0.0"
+
+"@pcd/util@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pcd/util/-/util-0.4.0.tgz#2131a7132668d19f18587c2eb97b220fadc629e1"
+  integrity sha512-Q9QFl1EHOXouzHXnVilRQpDnp8h2bznagwrWcBnV8FPk2+wD6fYCMOCsoiJsZdY+Rtz/fqqLhk1/v1ENq7xhaQ==
   dependencies:
     chai "^4.3.7"
     js-sha256 "^0.10.1"
