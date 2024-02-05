@@ -19,14 +19,10 @@
     "@pcd/passport-interface": "^0.8.0",
     "@pcd/pcd-collection": "^0.8.0",
     "@pcd/pcd-types": "^0.8.0",
-    "@pcd/rsa-image-pcd": "^0.2.0",
-    "@pcd/rsa-pcd": "^0.3.0",
     "@pcd/semaphore-signature-pcd": "^0.8.0",
     "fastify": "^4.24.3",
-    "lru-cache": "^10.0.1",
     "pino": "^8.16.1",
-    "uuid": "^9.0.1",
-    "viem": "^1.18.8"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.8.10",
