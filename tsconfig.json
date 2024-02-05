@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "lib": ["DOM", "ES2023"],
-    "jsx": "react-jsx",
+    "lib": ["ES2023"],
     "module": "commonjs",
     "target": "ES2022",
     "skipLibCheck": true,
