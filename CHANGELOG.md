@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/lemonadesocial/lemonade-zupass/compare/v1.0.0...v1.1.0) (2024-02-05)
+
+
+### Features
+
+* **deps:** upgrade dependencies ([b1d5f23](https://github.com/lemonadesocial/lemonade-zupass/commit/b1d5f2303c8014a08c7a4698b7fbf974411ee4f7))
+* remove zupass nft plugin ([8a2c535](https://github.com/lemonadesocial/lemonade-zupass/commit/8a2c535b0ff2feced59fd6bbab824cc708b5d693))
+
+
+### Reverts
+
+* Revert "build: add missing nested dependencies" ([ca21389](https://github.com/lemonadesocial/lemonade-zupass/commit/ca21389012abf9b8a8b9e28d77baea6add8d5cc9))
+* Revert "fix: temporarily use latest unpublished @pcd/eddsa-ticket-pcd" ([4220ae7](https://github.com/lemonadesocial/lemonade-zupass/commit/4220ae74a22fd6422d9d411bab0a2825914180dd))
+
 ## 1.0.0 (2023-11-10)
 
 
