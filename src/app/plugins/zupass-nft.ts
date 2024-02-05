@@ -1,5 +1,5 @@
 import { ArgumentTypeName, PCD, SerializedPCD } from '@pcd/pcd-types';
-import { EdDSATicketPCDPackage, TicketCategory } from '../../lib/eddsa-ticket-pcd/src';
+import { EdDSATicketPCDPackage, TicketCategory } from '@pcd/eddsa-ticket-pcd';
 import { EmailPCDPackage } from '@pcd/email-pcd';
 import { PCDActionType, PCDPermissionType } from '@pcd/pcd-collection';
 import { recoverMessageAddress } from 'viem';
